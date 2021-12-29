@@ -1,32 +1,45 @@
 <!DOCTYPE html>
 
 <html>
-   <head>
-      <title>Timestamp Microservice | freeCodeCamp.org</title>
-      <link rel="shortcut icon" href="https://cdn.freecodecamp.org/universal/favicons/favicon-32x32.png" type="image/x-icon"/>
-      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
-      <link href="style.css" rel="stylesheet" type="text/css">
-   </head>
 
-   <body>
-    <h1>Timestamp Microservice</h1>
-    <hr />
-    <div class="container">
-      <h3>Example Usage:</h3>
-      <ul>
-        <li><a href="api/2015-12-25">[project url]/api/2015-12-25</a></li>
-        <li><a href="api/1451001600000">[project url]/api/1451001600000</a></li>
-      </ul>
+  <head>
+    <title>Timestamp Microservice</title>
+    <link rel="shortcut icon" href="" type="image/x-icon"/>
+    <link href="style.css" rel="stylesheet" type="text/css">
+  </head>
 
-      <h3>Example Output:</h3>
-      <p>
-        <code>{"unix":1451001600000, "utc":"Fri, 25 Dec 2015 00:00:00 GMT"}</code>
-      </p>
+  <body>
+    <!--Title-->
+    <div id="title-container">
+      <h1>Timestamp Microservice</h1>
+      <h2>A freeCodeCamp project from the Back End Development and APIs Certification</h2>
     </div>
-    <div class="footer">
+    <!--Content-->
+    <div id="main-container">
+      <h3>Usage</h3>
       <p>
-        By <a href="https://www.freecodecamp.org/">freeCodeCamp.org</a>
+        A request to <b>/api/:date?</b> with a valid date string will return a JSON object containing an Unix timestamp and an
+        UTC string representation of the requested date:
+      </p>
+      <a href="api/2021-12-29" class="exemple-link">/api/2021-12-29</a>
+      <br>
+      <a href="api/12-29-2021" class="exemple-link">/api/12-29-2021</a>
+      <br>
+      <a href="api/1640736000000" class="exemple-link">/api/1640736000000</a>
+      <h3>Output</h3>
+      <code>{"unix": 1640736000000, "utc": "Wed, 29 Dec 2021 00:00:00 GMT"}</code>
+      <p>
+        <b>Observation:</b> An empty string request will return information for the current date. Invalid date strings will return an error object:
+      </p>
+      <a href="api/" class="exemple-link">/api</a>
+      <br>
+      <a href="api/not-a-date-string" class="exemple-link">/api/not-a-date-string</a>
+      <h3>Learn More</h3>
+      <p>
+        For more information please visit this project's repository on
+        <a href="https://github.com/victordrumond/timestamp-microservice" target="_blank">GitHub</a>.
       </p>
     </div>
   </body>
+
 </html>
