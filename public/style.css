@@ -27,7 +27,8 @@ p {
 
 code {
 	font-family: monospace;
-  	padding: 3px;
+	font-size: 18px;
+  	padding: 5px;
   	color: black;
   	background-color: lightgrey;
 }
