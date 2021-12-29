@@ -25,7 +25,7 @@ app.get("/api/:date_string", (req, res) => {
   if (isNaN(parseFloat(dateString))) {
     res.json({error: "Invalid Date"});
   } else if ((/^[0-9]+$/).test(dateString)) {
-    res.json({"unix": dateString, "utc": new Date(parseFloat(dateString)).toUTCString()});
+    res.json({"unix": parseFloat(dateString), "utc": new Date(parseFloat(dateString)).toUTCString()});
   } else {
     res.json({"unix": Date.parse(dateString), "utc": new Date(dateString).toUTCString()});
   };
@@ -33,7 +33,7 @@ app.get("/api/:date_string", (req, res) => {
 
 // API endpoint if date parameter is left empty
 app.get("/api/", (req, res) => {
-  res.json({"unix": (+ new Date()).toString(), "utc": new Date().toUTCString()});
+  res.json({"unix": (+ new Date()), "utc": new Date().toUTCString()});
 });
 
 // listen for requests :)
